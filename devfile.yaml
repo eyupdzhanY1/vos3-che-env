@@ -1,0 +1,14 @@
+schemaVersion: 2.2.0
+metadata:
+  name: vos3-vegas
+# attributes:
+#   controller.devfile.io/storage-type: ephemeral
+components:
+  - name: vos3-builder-enviroment
+    container:
+      image: vf11privateakspocregistry.azurecr.io/verifone/vos3-vegas-dockerimage:che
+      mountSources: true
+      command: ["tail", "-f", "/dev/null"]
+      cpuLimit: "20000m"
+      cpuRequest: "14000m"
+      memoryLimit: 64G
